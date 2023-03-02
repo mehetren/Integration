@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.10 on win32)" generated="20230302 15:44:55.521" rpa="false" schemaversion="3">
+<suite id="s1" name="Api Sample Project" source="C:\api_sample_project">
+<suite id="s1-s1" name="Sem Qa" source="C:\api_sample_project\sem_qa">
+<suite id="s1-s1-s1" name="TC sem qa sample" source="C:\api_sample_project\sem_qa\TC_sem_qa_sample.robot">
+<test id="s1-s1-s1-t1" name="TC Sem QA Test case" line="14">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>sem_qa</arg>
+<arg>${Base_Url}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230302 15:44:55.772" level="INFO">Creating Session using : alias=sem_qa, url=https://sem-ag-devhub--oemqafull.sandbox.my.salesforce.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230302 15:44:55.772" endtime="20230302 15:44:55.772"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${end_point}</var>
+<arg>services/oauth2/token?grant_type=password&amp;client_id=3MVG9buXpECUESHjKtCVZ.9ex5WPXEdhjxoPunJK.HkC43lNNI1P2hHczKEfy_WfTqJcZG6XVyg4oKRzJttfA&amp;client_secret=2E10D6A8C23DFD71E76ACC9811199277032F304C8C25C68181DB4D183A8BCCCF&amp;username=ramesh.ayyagari@sem.ag.devhub.oemqafull&amp;password=Maheshwara456%23</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230302 15:44:55.773" level="INFO">${end_point} = services/oauth2/token?grant_type=password&amp;client_id=3MVG9buXpECUESHjKtCVZ.9ex5WPXEdhjxoPunJK.HkC43lNNI1P2hHczKEfy_WfTqJcZG6XVyg4oKRzJttfA&amp;client_secret=2E10D6A8C23DFD71E76ACC9811199277032F304C8C25C681...</msg>
+<status status="PASS" starttime="20230302 15:44:55.773" endtime="20230302 15:44:55.773"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/x-www-form-urlencoded Authorization=Basic M01WRzk1QWNCZWFCNTVsWGdocU5FOTRQTjFKOVVuWTlNWnRJNEJacVR1X185SGduc004QTAwYXI3Y195TVRwVzN0NU9oZ1lvUkJsVHQ1Tk1uQnZOaDo1REFBMDI4RDdGMDhFQ0FFNDgyNThDNUExNDc3RjUxQkEzRTkyNkE5QjBBNUM1RTczMTNEOTVFOENCMTU3RTBG</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230302 15:44:55.774" level="INFO">${header} = {'Content-Type': 'application/x-www-form-urlencoded Authorization=Basic M01WRzk1QWNCZWFCNTVsWGdocU5FOTRQTjFKOVVuWTlNWnRJNEJacVR1X185SGduc004QTAwYXI3Y195TVRwVzN0NU9oZ1lvUkJsVHQ1Tk1uQnZOaDo1REFBMDI4RDdG...</msg>
+<status status="PASS" starttime="20230302 15:44:55.773" endtime="20230302 15:44:55.774"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${post_Response}</var>
+<arg>sem_qa</arg>
+<arg>${end_point}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230302 15:44:57.180" level="INFO">POST Request : url=https://sem-ag-devhub--oemqafull.sandbox.my.salesforce.com/services/oauth2/token?grant_type=password&amp;client_id=3MVG9buXpECUESHjKtCVZ.9ex5WPXEdhjxoPunJK.HkC43lNNI1P2hHczKEfy_WfTqJcZG6XVyg4oKRzJttfA&amp;client_secret=2E10D6A8C23DFD71E76ACC9811199277032F304C8C25C68181DB4D183A8BCCCF&amp;username=ramesh.ayyagari@sem.ag.devhub.oemqafull&amp;password=Maheshwara456%23 
+ path_url=/services/oauth2/token?grant_type=password&amp;client_id=3MVG9buXpECUESHjKtCVZ.9ex5WPXEdhjxoPunJK.HkC43lNNI1P2hHczKEfy_WfTqJcZG6XVyg4oKRzJttfA&amp;client_secret=2E10D6A8C23DFD71E76ACC9811199277032F304C8C25C68181DB4D183A8BCCCF&amp;username=ramesh.ayyagari@sem.ag.devhub.oemqafull&amp;password=Maheshwara456%23 
+ headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20230302 15:44:57.181" level="INFO">POST Response : url=https://sem-ag-devhub--oemqafull.sandbox.my.salesforce.com/services/oauth2/token?grant_type=password&amp;client_id=3MVG9buXpECUESHjKtCVZ.9ex5WPXEdhjxoPunJK.HkC43lNNI1P2hHczKEfy_WfTqJcZG6XVyg4oKRzJttfA&amp;client_secret=2E10D6A8C23DFD71E76ACC9811199277032F304C8C25C68181DB4D183A8BCCCF&amp;username=ramesh.ayyagari@sem.ag.devhub.oemqafull&amp;password=Maheshwara456%23 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 02 Mar 2023 10:14:56 GMT', 'Set-Cookie': 'CookieConsentPolicy=0:1; path=/; expires=Fri, 01-Mar-2024 10:14:56 GMT; Max-Age=31536000, LSKey-c$CookieConsentPolicy=0:1; path=/; expires=Fri, 01-Mar-2024 10:14:56 GMT; Max-Age=31536000, BrowserId=FQOiMLjjEe2lfVv37cojnA; domain=.salesforce.com; path=/; expires=Fri, 01-Mar-2024 10:14:56 GMT; Max-Age=31536000', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'X-Robots-Tag': 'none', 'Cache-Control': 'no-cache,must-revalidate,max-age=0,no-store,private', 'Expires': 'Thu, 01 Jan 1970 00:00:00 GMT', 'X-ReadOnlyMode': 'false', 'Content-Type': 'application/json;charset=UTF-8', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked'} 
+ body={"access_token":"00D3L0000008mhD!AR0AQHkX1PS3fCA4Uy9Ym9dLOqftBzoVVZPgwNRntPGEmbCSpbE6FwL_rwMKW4_HiO.QxR1ysDay1ej1Kv2l.Yg.p03CsU7o","instance_url":"https://sem-ag-devhub--oemqafull.sandbox.my.salesforce.com","id":"https://test.salesforce.com/id/00D3L0000008mhDUAQ/0053L000002gZsPQAU","token_type":"Bearer","issued_at":"1677752097108","signature":"KulEECsMwzJ47TSsGWrL/ESuimbi8aBG5zx9Y57p50Q="} 
+ </msg>
+<msg timestamp="20230302 15:44:57.181" level="INFO">${post_Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230302 15:44:55.774" endtime="20230302 15:44:57.181"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${json_data}</var>
+<arg>${post_Response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230302 15:44:57.183" level="INFO">${json_data} = {'access_token': '00D3L0000008mhD!AR0AQHkX1PS3fCA4Uy9Ym9dLOqftBzoVVZPgwNRntPGEmbCSpbE6FwL_rwMKW4_HiO.QxR1ysDay1ej1Kv2l.Yg.p03CsU7o', 'instance_url': 'https://sem-ag-devhub--oemqafull.sandbox.my.salesf...</msg>
+<status status="PASS" starttime="20230302 15:44:57.182" endtime="20230302 15:44:57.183"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${post_Response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230302 15:44:57.185" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20230302 15:44:57.184" endtime="20230302 15:44:57.185"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230302 15:44:57.186" endtime="20230302 15:44:57.186"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${access_token}</var>
+<arg>${json_data}</arg>
+<arg>access_token</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20230302 15:44:57.211" level="INFO">${access_token} = ['00D3L0000008mhD!AR0AQHkX1PS3fCA4Uy9Ym9dLOqftBzoVVZPgwNRntPGEmbCSpbE6FwL_rwMKW4_HiO.QxR1ysDay1ej1Kv2l.Yg.p03CsU7o']</msg>
+<status status="PASS" starttime="20230302 15:44:57.187" endtime="20230302 15:44:57.211"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>${token_value}</var>
+<arg>${access_token}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230302 15:44:57.212" level="INFO">${token_value} = 00D3L0000008mhD!AR0AQHkX1PS3fCA4Uy9Ym9dLOqftBzoVVZPgwNRntPGEmbCSpbE6FwL_rwMKW4_HiO.QxR1ysDay1ej1Kv2l.Yg.p03CsU7o</msg>
+<status status="PASS" starttime="20230302 15:44:57.212" endtime="20230302 15:44:57.212"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header_query}</var>
+<arg>Authorization=Bearer ${token_value}</arg>
+<arg>Content-Type=application/json</arg>
+<arg>Cache-Control=no-cache</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230302 15:44:57.214" level="INFO">${header_query} = {'Authorization': 'Bearer 00D3L0000008mhD!AR0AQHkX1PS3fCA4Uy9Ym9dLOqftBzoVVZPgwNRntPGEmbCSpbE6FwL_rwMKW4_HiO.QxR1ysDay1ej1Kv2l.Yg.p03CsU7o', 'Content-Type': 'application/json', 'Cache-Control': 'no-ca...</msg>
+<status status="PASS" starttime="20230302 15:44:57.213" endtime="20230302 15:44:57.214"/>
+</kw>
+<kw name="Replace space with plus sign" library="replace_string">
+<var>${q}</var>
+<kw name="Replace String" library="String">
+<var>${Result2}</var>
+<arg>SELECT CreatedDate,LastModifiedDate,Name,RCY_AssetResultList__c,RCY_Brand__c,RCY_ExternalID__c FROM Asset WHERE VIN__c = 'VSSZZZ5FZJ6500074'</arg>
+<arg>${SPACE}</arg>
+<arg>+</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230302 15:44:57.215" level="INFO">${Result2} = SELECT+CreatedDate,LastModifiedDate,Name,RCY_AssetResultList__c,RCY_Brand__c,RCY_ExternalID__c+FROM+Asset+WHERE+VIN__c+=+'VSSZZZ5FZJ6500074'</msg>
+<status status="PASS" starttime="20230302 15:44:57.215" endtime="20230302 15:44:57.215"/>
+</kw>
+<msg timestamp="20230302 15:44:57.215" level="INFO">${q} = SELECT+CreatedDate,LastModifiedDate,Name,RCY_AssetResultList__c,RCY_Brand__c,RCY_ExternalID__c+FROM+Asset+WHERE+VIN__c+=+'VSSZZZ5FZJ6500074'</msg>
+<status status="PASS" starttime="20230302 15:44:57.214" endtime="20230302 15:44:57.215"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${query}</var>
+<arg>?q=${q}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230302 15:44:57.216" level="INFO">${query} = ?q=SELECT+CreatedDate,LastModifiedDate,Name,RCY_AssetResultList__c,RCY_Brand__c,RCY_ExternalID__c+FROM+Asset+WHERE+VIN__c+=+'VSSZZZ5FZJ6500074'</msg>
+<status status="PASS" starttime="20230302 15:44:57.215" endtime="20230302 15:44:57.216"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint_query}</var>
+<arg>services/data/v48.0/queryAll${query}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230302 15:44:57.216" level="INFO">${endpoint_query} = services/data/v48.0/queryAll?q=SELECT+CreatedDate,LastModifiedDate,Name,RCY_AssetResultList__c,RCY_Brand__c,RCY_ExternalID__c+FROM+Asset+WHERE+VIN__c+=+'VSSZZZ5FZJ6500074'</msg>
+<status status="PASS" starttime="20230302 15:44:57.216" endtime="20230302 15:44:57.216"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${get_Response}</var>
+<arg>sem_qa</arg>
+<arg>${endpoint_query}</arg>
+<arg>headers=${header_query}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230302 15:44:57.583" level="INFO">GET Request : url=https://sem-ag-devhub--oemqafull.sandbox.my.salesforce.com/services/data/v48.0/queryAll?q=SELECT+CreatedDate,LastModifiedDate,Name,RCY_AssetResultList__c,RCY_Brand__c,RCY_ExternalID__c+FROM+Asset+WHERE+VIN__c+=+'VSSZZZ5FZJ6500074' 
+ path_url=/services/data/v48.0/queryAll?q=SELECT+CreatedDate,LastModifiedDate,Name,RCY_AssetResultList__c,RCY_Brand__c,RCY_ExternalID__c+FROM+Asset+WHERE+VIN__c+=+'VSSZZZ5FZJ6500074' 
+ headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer 00D3L0000008mhD!AR0AQHkX1PS3fCA4Uy9Ym9dLOqftBzoVVZPgwNRntPGEmbCSpbE6FwL_rwMKW4_HiO.QxR1ysDay1ej1Kv2l.Yg.p03CsU7o', 'Content-Type': 'application/json', 'Cache-Control': 'no-cache', 'Cookie': 'BrowserId=FQOiMLjjEe2lfVv37cojnA; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1'} 
+ body=None 
+ </msg>
+<msg timestamp="20230302 15:44:57.583" level="INFO">GET Response : url=https://sem-ag-devhub--oemqafull.sandbox.my.salesforce.com/services/data/v48.0/queryAll?q=SELECT+CreatedDate,LastModifiedDate,Name,RCY_AssetResultList__c,RCY_Brand__c,RCY_ExternalID__c+FROM+Asset+WHERE+VIN__c+=+'VSSZZZ5FZJ6500074' 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 02 Mar 2023 10:14:57 GMT', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'X-Robots-Tag': 'none', 'Cache-Control': 'no-cache,must-revalidate,max-age=0,no-store,private', 'Sforce-Limit-Info': 'api-usage=826/5000000', 'Content-Type': 'application/json;charset=UTF-8', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked'} 
+ body={"totalSize":42,"done":true,"records":[{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006qL75QAE"},"CreatedDate":"2023-01-23T07:48:13.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"Vehicle User 7254ac7a-4490-47ef-ba65-68c140bfd7a2 - VSSZZZ5FZJ6500074","RCY_AssetResultList__c":"Vehicle User 7254ac7a-4490-47ef-ba65-68c140bfd7a2 - VSSZZZ5FZJ6500074, Vehicle - User, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"7254ac7a-4490-47ef-ba65-68c140bfd7a2_VSSZZZ5FZJ6500074"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006qL7AQAU"},"CreatedDate":"2023-01-23T07:48:15.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-NET.500.208","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-NET.500.208, Service, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_NET.500.208"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWHQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-AUS-A8M-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-AUS-A8M-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_AUS_A8M_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWIQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-TPL-B31-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-TPL-B31-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_TPL_B31_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWJQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-MOT-DK8-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-MOT-DK8-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_MOT_DK8_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWKQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-ASG-EA0-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-ASG-EA0-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_ASG_EA0_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWLQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-ONL-EL0-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-ONL-EL0-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_ONL_EL0_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWMQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-AAU-E0A-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-AAU-E0A-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_AAU_E0A_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWNQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-RAO-I8E-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-RAO-I8E-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_RAO_I8E_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWOQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-SPR-QH1-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-SPR-QH1-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_SPR_QH1_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWPQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-LCP-QQ9-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-LCP-QQ9-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_LCP_QQ9_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWQQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-KMP-QR9-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-KMP-QR9-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_KMP_QR9_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWRQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-SNR-SL3-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-SNR-SL3-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_SNR_SL3_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWSQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-SNR-S99-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-SNR-S99-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_SNR_S99_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWTQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-GMO-TJ1-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-GMO-TJ1-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_GMO_TJ1_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWUQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-ASY-0K0-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-ASY-0K0-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_ASY_0K0_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWVQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-NAV-7UF-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-NAV-7UF-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_NAV_7UF_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWWQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-LIA-8G1-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-LIA-8G1-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_LIA_8G1_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWXQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-SWS-8N6-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-SWS-8N6-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_SWS_8N6_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWYQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-GRA-8T7-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-GRA-8T7-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_GRA_8T7_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sNWZQA2"},"CreatedDate":"2023-01-25T10:06:00.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-AUD-9WT-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-AUD-9WT-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_AUD_9WT_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006srSCQAY"},"CreatedDate":"2023-02-14T05:51:45.000+0000","LastModifiedDate":"2023-03-01T10:25:41.000+0000","Name":"Vehicle User bb5c3a95-b4c9-495c-8f65-d3c1e2bfd86b - VSSZZZ5FZJ6500074","RCY_AssetResultList__c":"Vehicle User bb5c3a95-b4c9-495c-8f65-d3c1e2bfd86b - VSSZZZ5FZJ6500074, Vehicle - User, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"bb5c3a95-b4c9-495c-8f65-d3c1e2bfd86b_VSSZZZ5FZJ6500074"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006sRNdQAM"},"CreatedDate":"2023-01-31T05:29:14.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"Vehicle User bb5c3a95-b4c9-495c-8f65-d3c1e2bfd86b - VSSZZZ5FZJ6500074","RCY_AssetResultList__c":"Vehicle User bb5c3a95-b4c9-495c-8f65-d3c1e2bfd86b - VSSZZZ5FZJ6500074, Vehicle - User, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"bb5c3a95-b4c9-495c-8f65-d3c1e2bfd86b_VSSZZZ5FZJ6500074"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006srSKQAY"},"CreatedDate":"2023-02-14T05:51:49.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-ASG-EA0-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-ASG-EA0-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_ASG_EA0_"},{"attributes":{"type":"Asset","url":"/services/data/v48.0/sobjects/Asset/02i3L000006srSHQAY"},"CreatedDate":"2023-02-14T05:51:49.000+0000","LastModifiedDate":"2023-03-01T10:25:30.000+0000","Name":"VSSZZZ5FZJ6500074-AUS-A8M-","RCY_AssetResultList__c":"VSSZZZ5FZJ6500074-AUS-A8M-, PR Number, In Warranty - False","RCY_Brand__c":"SEAT","RCY_ExternalID__c":"VSSZZZ5FZJ6500074_AUS_A8M_"},{"attributes":{"type":... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20230302 15:44:57.583" level="INFO">${get_Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230302 15:44:57.217" endtime="20230302 15:44:57.583"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${get_Response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230302 15:44:57.584" endtime="20230302 15:44:57.586"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${get_Response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230302 15:44:57.588" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20230302 15:44:57.586" endtime="20230302 15:44:57.588"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230302 15:44:57.588" endtime="20230302 15:44:57.589"/>
+</kw>
+<status status="PASS" starttime="20230302 15:44:55.772" endtime="20230302 15:44:57.590"/>
+</test>
+<status status="PASS" starttime="20230302 15:44:55.552" endtime="20230302 15:44:57.591"/>
+</suite>
+<status status="PASS" starttime="20230302 15:44:55.551" endtime="20230302 15:44:57.593"/>
+</suite>
+<status status="PASS" starttime="20230302 15:44:55.527" endtime="20230302 15:44:57.594"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Api Sample Project">Api Sample Project</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Sem Qa">Api Sample Project.Sem Qa</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="TC sem qa sample">Api Sample Project.Sem Qa.TC sem qa sample</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
