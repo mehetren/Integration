@@ -11,7 +11,6 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     name: Run Robot Framework Tests
     steps:
@@ -21,4 +20,6 @@ jobs:
         uses: joonvena/robotframework-docker-action@v1.0
         with:
           browser: 'firefox'
-          robot_threads: 2
+          robot_threads: 2         
+          run:
+            robot replace_string.robot
