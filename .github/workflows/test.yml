@@ -18,7 +18,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install --upgrade robotframework-selenium2library
-          COPY requirements.txt /tmp/
+          cp requirements.txt /tmp/
           pip install --requirement /tmp/requirements.txt
           pip list
      
