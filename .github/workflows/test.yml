@@ -21,6 +21,4 @@ jobs:
         with:
           browser: 'firefox'
           robot_threads: 2         
-          run:
-            robot replace_string.robot
-            robot TC_sem_qa_sample.robot
+        
