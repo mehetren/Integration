@@ -18,8 +18,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install --upgrade robotframework-selenium2library
-          cp requirements.txt /tmp/
-          pip install --requirement /tmp/requirements.txt
+          pip install robotframework-jsonlibrary
+          pip install robotframework-requests
+          pip install jsonpath-ng
+          pip install jsonpath-rw
+          pip install robotframework-seleniumlibrary
           pip list
      
       - name: Checkout
