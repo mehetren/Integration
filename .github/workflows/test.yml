@@ -23,6 +23,9 @@ jobs:
           pip install jsonpath-ng
           pip install jsonpath-rw
           pip install robotframework-seleniumlibrary
+          pip install collections
+          pip install collection
+          
           pip list
      
       - name: Checkout
