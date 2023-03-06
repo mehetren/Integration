@@ -17,13 +17,14 @@ jobs:
       - name: Install python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install --upgrade robotframework-selenium2library
-          pip install robotframework-jsonlibrary
-          pip install robotframework-requests
-          pip install jsonpath-ng
-          pip install jsonpath-rw
-          pip install robotframework-seleniumlibrary
-          pip install collection
+          python -m pip install --upgrade robotframework-selenium2library
+          python -m pip install robotframework-jsonlibrary
+          python -m pip install robotframework-requests
+          python -m pip install jsonpath-ng
+          python -m pip install jsonpath-rw
+          python -m pip install robotframework-seleniumlibrary
+          python -m pip install collection
+          python -m pip install robotframework-jsonlibrary
           pip list
      
       - name: Checkout
