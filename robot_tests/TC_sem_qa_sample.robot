@@ -1,5 +1,6 @@
 *** Settings ***
 Library    RequestsLibrary
+Library    JSONLibrary
 Library    Collections
 Library    String
 Resource   replace_string.robot
