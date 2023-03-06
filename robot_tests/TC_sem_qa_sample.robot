@@ -21,7 +21,7 @@ Testcase_01
     Should Be Equal    ${status_code}   200
 
     ${access_token}=    Get Value From Json    ${json_data}     access_token
-    ${token_value}=    get from list       ${access_token}    0
+    ${token_value}=    get from list    ${access_token}     0
     ${header_query}     Create Dictionary    Authorization=Bearer ${token_value}   Content-Type=application/json   Cache-Control=no-cache
     ${q}=       Replace space with plus sign
     ${query}        Set Variable        ?q=${q}
