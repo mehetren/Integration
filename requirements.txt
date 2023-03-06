@@ -1,0 +1,49 @@
+Appium-Python-Client==2.6.1
+babel
+click
+curlify
+dicttoxml
+dpath
+elasticsearch
+Faker    # required for replacing resource manager in ONE.CRM INT Stream
+flake8
+Flask
+Flask-RESTful
+fuzzywuzzy
+gevent
+jira
+json2table
+jsonpath-ng
+langid
+lxml
+openpyxl
+paho-mqtt
+paramiko
+pdfminer
+Pillow
+plotly
+portalocker
+protobuf<4 #TODO: Locked version due to comptibility issues of V4 Check Update Options
+psutil
+pycryptodome
+pyjwt
+pyopenssl
+pyotp
+python-dateutil
+python-jenkins==0.4.16  # Incompatability for testplan import starting with 1.7.0
+pytest    #  need from  TestResourceMgr (Testa self testing Unittest)
+pytz
+PyXB
+requests
+scandir
+selenium==4.3.0
+suds
+urllib3
+vobject
+Werkzeug
+xmljson
+jsonschema
+opensearch-py
+pyyaml                   # for devstack bamboo integration
+pytest-html
+selenium-wire
