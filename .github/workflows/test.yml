@@ -36,7 +36,7 @@ jobs:
         with:
           browser: 'firefox'
           robot_threads: 2 
-      - name: copy Reports
+      
         
            
   
