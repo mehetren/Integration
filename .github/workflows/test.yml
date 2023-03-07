@@ -35,5 +35,12 @@ jobs:
         with:
           browser: 'firefox'
           robot_threads: 2 
+      - name: copy Reports
+        run: |
+          cp /opt/robotframework/reports/report.html /integration/robot_tests
+           
+  
+       
+    
         
          
