@@ -1,10 +1,9 @@
 *** Settings ***
-Library    RequestsLibrary
-Library    JSONLibrary
-Library    Collections
-Library    Collection
-Library    String
-Resource   replace_string.robot
+Library     RequestsLibrary
+Library     Collection
+Library     String
+Resource    replace_string.robot
+Library     JSONLibrary
 
 *** Variables ***
 ${Base_Url}  https://sem-ag-devhub--oemqafull.sandbox.my.salesforce.com/
