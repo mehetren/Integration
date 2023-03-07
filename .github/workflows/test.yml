@@ -37,8 +37,7 @@ jobs:
           browser: 'firefox'
           robot_threads: 2 
       - name: copy Reports
-        run: |
-          cp $ROBOT_REPORTS $WORKSPACE/REPORTS
+        
            
   
        
