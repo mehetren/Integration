@@ -31,13 +31,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Robot Framework
-        uses: joonvena/robotframework-docker-action@v1.0
+        uses: mehetren/robotframework-docker-action@v1.0
+        #uses: joonvena/robotframework-docker-action@v1.0
         with:
           browser: 'firefox'
           robot_threads: 2 
       - name: copy Reports
         run: |
-          cp /opt/robotframework/reports/report.html /integration/robot_tests
+          cp $ROBOT_REPORTS $WORKSPACE/REPORTS
            
   
        
