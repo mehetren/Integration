@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -25,6 +25,7 @@ jobs:
           python -m pip install robotframework-seleniumlibrary
           python -m pip install collection
           python -m pip install robotframework-jsonlibrary
+          pip install robotframework-stacktrace
           pip list
      
       - name: Checkout
