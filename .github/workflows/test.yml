@@ -33,10 +33,15 @@ jobs:
         uses: actions/checkout@v2
       - name: Robot Framework
         uses: mehetren/robotframework-docker-action@v1.0
-        #uses: joonvena/robotframework-docker-action@v1.0
         with:
           browser: 'firefox'
           robot_threads: 2 
+      
+      - name: Archive Tests results
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test_results
+          path: output/test/report.html
       
         
            
