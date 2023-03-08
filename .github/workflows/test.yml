@@ -41,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Test_results
-          path: output/test/report.html
+          path: /opt/robotframework/reports/report.html
       
         
            
