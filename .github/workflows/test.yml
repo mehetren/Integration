@@ -19,7 +19,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -U robotframework-jsonlibrary
           python -m pip install --upgrade robotframework-selenium2library
-          
+          python -m pip install collection
           python -m pip install robotframework-requests
           python -m pip install jsonpath-ng
           python -m pip install jsonpath-rw
