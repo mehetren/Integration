@@ -1,9 +1,8 @@
 *** Settings ***
-Library     RequestsLibrary
-Library     Collection
-Library     String
+Library  RequestsLibrary
+Library    Collections
+Library    String
 Resource    replace_string.robot
-Library     JSONLibrary
 
 *** Variables ***
 ${Base_Url}  https://sem-ag-devhub--oemqafull.sandbox.my.salesforce.com/
@@ -19,10 +18,10 @@ TC WETEAMF-1943 OEMQAFULL
     ${json_data}=  Set Variable    ${post_Response.json()}
     ${status_code}=  Convert To String      ${post_Response.status_code}
     Should Be Equal    ${status_code}   200
+    ${data}=    Evaluate    json.loads('''${post_Response.content}''')    json
+    Log To Console    ${data['access_token']}
 
-    ${access_token}=    Get Value From Json    ${json_data}     access_token
-    ${token_value}=    get from list       ${access_token}    0
-    ${header_query}     Create Dictionary    Authorization=Bearer ${token_value}   Content-Type=application/json   Cache-Control=no-cache
+    ${header_query}     Create Dictionary    Authorization=Bearer ${data['access_token']}   Content-Type=application/json   Cache-Control=no-cache
     ${q}=       Replace space with plus sign
     ${query}        Set Variable        ?q=${q}
     ${endpoint_query}   Set Variable    services/data/v48.0/queryAll${query}
