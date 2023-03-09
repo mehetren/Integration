@@ -1,4 +1,4 @@
-#WETEAMF-415 - passing the parameter Language and mandator with the help of GET request and validating the status code
+#WETEAMF-415 - passing the parameter Language and mandator with the help of GET request and validating the status code 200
 *** Settings ***
 Library  RequestsLibrary
 
