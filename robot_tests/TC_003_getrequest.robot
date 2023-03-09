@@ -1,4 +1,4 @@
-#WETEAMG-1943 -fetching the DB query with the help of GET request
+#WETEAMF-1943 -fetching the DB query with the help of GET request
 *** Settings ***
 Library  RequestsLibrary
 
