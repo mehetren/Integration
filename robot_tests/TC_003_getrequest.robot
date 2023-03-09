@@ -1,4 +1,6 @@
-#WETEAMF-415 - passing the parameter Language and mandator with the help of GET request and validating the status code 200
+#WETEAMF-415 - we are using article end point with article id as parameter & path parameters like language & mandator passing with the help of
+#GET request and fetching that article data also validating the status code 200
+
 *** Settings ***
 Library  RequestsLibrary
 
