@@ -1,5 +1,9 @@
-#WETEAMF-1943 fetching the data using nornmal URL using post method to get the access token and with the help of access token
-#and replacing the space with  + sign and fetching the data using query also validating the status code 200
+[11:58 AM] Purushottam Konda
+#WETEAMF-1943 we are using base token url to fetch token value then we are using that token id to fetch data in OEMQAFULL DB 
+#&  using post method to get the access token and with the help of access token
+#and replacing the space with  + sign and fetching the data using query also validating the status code 200
+
+
 *** Settings ***
 Library  RequestsLibrary
 Library    Collections
