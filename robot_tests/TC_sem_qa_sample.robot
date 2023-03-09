@@ -1,5 +1,5 @@
-#WETEAMF-1943 fetching the data using nornmal URL usning post method to get the access token and with the help of access token
-#and replaicng the space with  + sign and fetching the data using query also validating the status code
+#WETEAMF-1943 fetching the data using nornmal URL using post method to get the access token and with the help of access token
+#and replacing the space with  + sign and fetching the data using query also validating the status code
 *** Settings ***
 Library  RequestsLibrary
 Library    Collections
