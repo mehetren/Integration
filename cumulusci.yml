@@ -1,22 +1,22 @@
 minimum_cumulusci_version: '3.73.0'
 project:
-    name: wednsday
+    name: project
     package:
-        name: wednsday
+        name: project
         api_version: '55.0'
     git:
-        default_branch: 'y'
+        default_branch: 'Feature'
     source_format: sfdx
 
 tasks:
     robot:
         options:
-            suites: robot/wednsday/tests
+            suites: robot/project/tests
             options:
-                outputdir: robot/wednsday/results
+                outputdir: robot/project/results
 
     robot_testdoc:
         options:
-            path: robot/wednsday/tests
-            output: robot/wednsday/doc/wednsday_tests.html
+            path: robot/project/tests
+            output: robot/project/doc/project_tests.html
 
