@@ -2,9 +2,9 @@ name: robot_test
 
 on:
   push:
-    branches: [ main ]
+    branches: [ Feature ]
   pull_request:
-    branches: [ main ]
+    branches: [ Feature ]
 
 permissions:
   contents: write
@@ -41,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Test_results
-          path: /opt/robotframework/reports/report.html
+          path: /home/runner/work/integration/integration/project/tests/report.html
       
         
            
