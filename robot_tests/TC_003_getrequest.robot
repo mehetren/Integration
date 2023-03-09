@@ -1,4 +1,4 @@
-#WETEAMF-415 -fetching the DB query with the help of GET request
+#WETEAMF-415 - passing the parameter Language and mandator with the help of GET request and validating the startus code
 *** Settings ***
 Library  RequestsLibrary
 
