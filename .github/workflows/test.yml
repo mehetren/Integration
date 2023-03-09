@@ -2,9 +2,9 @@ name: robot_test
 
 on:
   push:
-    branches: [ Feature ]
+    branches: [ main ]
   pull_request:
-    branches: [ Feature ]
+    branches: [ main ]
 
 permissions:
   contents: write
