@@ -1,6 +1,7 @@
 name: robot_test
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
   pull_request:
@@ -13,13 +14,29 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Run Robot Framework Tests
+
     steps:
+      - name: Checking out Github Repo
+        uses: actions/checkout@v3
+
+      - name: Setting up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Update APT packages
+        run: |
+          sudo apt update
+          sudo apt install --only-upgrade openssl
+          sudo apt install firefox
+          
+          
+
       - name: Install python dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -U robotframework-jsonlibrary
           python -m pip install --upgrade robotframework-selenium2library
-          python -m pip install collection
+          python -m pip install -U robotframework-jsonlibrary
           python -m pip install robotframework-requests
           python -m pip install jsonpath-ng
           python -m pip install jsonpath-rw
@@ -27,26 +44,42 @@ jobs:
           python -m pip install collection
           python -m pip install robotframework-jsonlibrary
           pip install robotframework-stacktrace
-          pip list
-     
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Robot Framework
-        uses: mehetren/robotframework-docker-action@v1.0
-        with:
-          browser: 'firefox'
-          robot_threads: 2 
-      
-      - name: Archive Tests results
+          python -m pip install pillow
+          pip install robotframework==6.0.2
+          pip install jproperties
+          echo "PATH Variable"
+          echo "$PATH"
+          echo "current working directory"
+          pwd
+          echo "list directories"
+          ls -a
+      - name: Download geckodriver and Run test case
+        run: |
+          export GV=v0.32.2
+          wget "https://github.com/mozilla/geckodriver/releases/download/$GV/geckodriver-$GV-linux64.tar.gz"
+          tar xvzf geckodriver-$GV-linux64.tar.gz
+          chmod +x geckodriver
+          sudo cp geckodriver /usr/local/bin/
+          echo $PATH
+          echo "PATH Variable"
+          echo "$PATH"
+          echo "current working directory"
+          pwd
+          echo "list directories"
+          ls -a
+          echo "Executing Test cases"
+          mkdir output
+          chmod 777 output
+          cd output
+          robot /home/runner/work/Integration/Integration/robot_tests/
+
+      - name: Final Report
+        if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: Test_results
-          path: /home/runner/work/integration/integration/project/tests/report.html
+          name: Output Report
+          path: /home/runner/work/Integration/Integration/output
+
+          
+     
       
-        
-           
-  
-       
-    
-        
-         
